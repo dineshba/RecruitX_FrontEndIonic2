@@ -1,10 +1,31 @@
+{{diagnostic}}
 
 <ion-navbar *navbar>
   <ion-title>
     Add Candidate
   </ion-title>
 </ion-navbar>
-
 <ion-content class="addCandidateProfilePage">
-<button (click)="scheduleInterview()">Next</button>
+  <form #candidateForm="ngForm">
+    <ion-list>
+      <ion-input>
+      <ion-label>Name</ion-label>
+      <input type="text" value="" required maxlength="30" [(ngModel)]="model.name" ngControl="name" #name="ngForm">
+    </ion-input>
+    <ion-input>
+      <ion-label class="input-label" for="role">Role</ion-label>
+      <select class="select-custom-align" required [(ngModel)]="model.role" ngControl="role">
+        <option *ngFor="#role of roles" [value]="role">{{role}}</option>
+      </select>
+    </ion-input>
+    <ion-input>
+      <ion-label class="input-label" for="skills">Skills</ion-label>
+    <ion-list>
+      <ion-checkbox>Java</ion-checkbox>
+      <ion-checkbox>Csharp</ion-checkbox>
+    </ion-list>
+  </ion-input>
+<button type="submit" (click)="scheduleInterview(candidateForm.form.valid)">Next</button>
+</ion-list>
+</form>
 </ion-content>
