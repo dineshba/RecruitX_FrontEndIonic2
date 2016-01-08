@@ -1,0 +1,25 @@
+<ion-navbar *navbar>
+  <ion-title>
+    Add Candidate
+  </ion-title>
+</ion-navbar>
+
+<ion-content class="addCandidateProfilePage">
+  <ion-list>
+    <form [ngFormModel]="form">
+
+      <ion-input>
+        <ion-label>Name</ion-label>
+        <div>
+          <input type="text" value="" required maxlength="30" ngControl="name">
+          <div *ngIf="name.dirty && !name.valid">
+            <p *ngIf="name.errors.required" class="error-text">Required</p>
+            <p *ngIf="name.errors.pattern" class="error-text">Invalid</p>
+          </div>
+        </div>
+      </ion-input>
+
+      <button (click)="submitData()" [disabled]="!form.valid" class="btn btn-primary">Sumbit data</button>
+    </form>
+  </ion-list>
+</ion-content>
