@@ -1,10 +1,15 @@
 
 <ion-navbar *navbar>
-  <ion-title>
-    Schedule Interview
-   </ion-title>
+ <ion-title>
+   Schedule Interview
+  </ion-title>
 </ion-navbar>
 
 <ion-content class="scheduleInterviewPage">
-
+     <ion-list>
+       <button ion-item *ngFor="#interviewRound of interviewRounds" (click) = onClick(interviewRound)>
+         {{interviewRound.name}}
+         <p>{{interviewRound.time}}
+       </button>
+     </ion-list>
 </ion-content>

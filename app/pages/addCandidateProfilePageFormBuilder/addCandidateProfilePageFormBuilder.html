@@ -19,6 +19,18 @@
         </div>
       </ion-input>
 
+
+        <ion-input>
+          <ion-label>Experience</ion-label>
+          <div>
+            <input type="text" required maxlength="5" ngControl="experience">
+            <div *ngIf="experience.dirty && !experience.valid">
+              <p *ngIf="experience.errors.required" class="error-text">Required</p>
+              <p *ngIf="experience.errors.numeric" class="error-text">Invalid Input</p>
+            </div>
+          </div>
+      </ion-input>
+
       <button (click)="submitData()" [disabled]="!form.valid" class="btn btn-primary">Sumbit data</button>
     </form>
   </ion-list>

@@ -14,7 +14,7 @@ export class AddCandidateProfilePage {
   constructor(nav:NavController) {
     this.roles = ['Dev', 'QA', 'BA', 'PM', 'UI/UX'];
     this.nav = nav;
-    this.model =new Candidate();
+    this.model =new Candidate("", "");
   }
 //  model = new Candidate("Recruiter");
 

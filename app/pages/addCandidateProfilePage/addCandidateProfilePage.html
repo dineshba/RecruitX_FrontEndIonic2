@@ -1,5 +1,4 @@
 {{diagnostic}}
-
 <ion-navbar *navbar>
   <ion-title>
     Add Candidate
@@ -9,9 +8,13 @@
   <form #candidateForm="ngForm">
     <ion-list>
       <ion-input>
-      <ion-label>Name</ion-label>
-      <input type="text" value="" required maxlength="30" [(ngModel)]="model.name" ngControl="name" #name="ngForm">
-    </ion-input>
+        <ion-label>Name</ion-label>
+        <div>
+          <input type="text" value="" required maxlength="30" [(ngModel)]="model.name" ngControl="name" #name="ngForm">
+            <p [hidden]="name.valid || name.pristine" class="error-text"> Required </p>
+        </div>
+      </ion-input>
+
     <ion-input>
       <ion-label class="input-label" for="role">Role</ion-label>
       <select class="select-custom-align" required [(ngModel)]="model.role" ngControl="role">
@@ -25,7 +28,7 @@
       <ion-checkbox>Csharp</ion-checkbox>
     </ion-list>
   </ion-input>
-<button type="submit" (click)="scheduleInterview(candidateForm.form.valid)">Next</button>
+<button type="submit" (click)="scheduleInterview(candidateForm.form.valid)" >Next</button>
 </ion-list>
 </form>
 </ion-content>

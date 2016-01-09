@@ -1,5 +1,6 @@
 import {Page, NavController} from 'ionic/ionic';
 import {AddCandidateProfilePage} from '../addCandidateProfilePage/addCandidateProfilePage';
+import {AddCandidateProfilePageFormBuilder} from '../addCandidateProfilePageFormBuilder/addCandidateProfilePageFormBuilder';
 
 @Page({
   templateUrl: 'build/pages/candidateListingPage/candidateListingPage.html',
@@ -10,6 +11,6 @@ export class CandidateListingPage {
   }
 
   addCandidate() {
-    this.nav.push(AddCandidateProfilePage);
+    this.nav.push(AddCandidateProfilePageFormBuilder);
   }
 }

@@ -12,4 +12,11 @@ export class UsernameValidator {
       }
       return null;
     }
+
+    static numeric(control: Control): ValidationResult {
+      if (control.value !="" && !/^[0-9]+([\.,][0-9]+)?$/.test(control.value)){
+        return {"numeric": true};
+      }
+      return null;
+    }
 }
