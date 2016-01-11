@@ -5,7 +5,7 @@
 </ion-navbar>
 
 <ion-content class="addCandidateProfilePage">
-  <ion-list>
+  <ion-list inset>
     <form [ngFormModel]="form">
 
       <ion-input>
@@ -31,7 +31,7 @@
           </div>
       </ion-input>
 
-      <button (click)="submitData()" [disabled]="!form.valid" class="btn btn-primary">Sumbit data</button>
+      <button (click)="submitData()" [disabled]="!form.valid" class="button button-full" full>Sumbit data</button>
     </form>
   </ion-list>
 </ion-content>

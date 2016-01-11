@@ -6,10 +6,12 @@
 </ion-navbar>
 
 <ion-content class="scheduleInterviewPage">
-     <ion-list>
+     <ion-list inset>
        <button ion-item *ngFor="#interviewRound of interviewRounds" (click) = onClick(interviewRound)>
          {{interviewRound.name}}
-         <p>{{interviewRound.time}}
+         <p>{{interviewRound.time}}</p>
        </button>
+
      </ion-list>
+     <button full (click)="submitData()"  [disabled]="!valid">Create</button>
 </ion-content>
