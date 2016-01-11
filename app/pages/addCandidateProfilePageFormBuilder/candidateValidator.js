@@ -4,7 +4,7 @@ interface ValidationResult{
    [key:string]:boolean;
 }
 
-export class UsernameValidator {
+export class CandidateValidator {
 
     static pattern(control: Control): ValidationResult {
       if (control.value!= "" && !/^[a-z'-\,]+[\sa-z.'-\,]*$/i.test(control.value)){

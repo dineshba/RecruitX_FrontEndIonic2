@@ -5,7 +5,7 @@
 </ion-navbar>
 
 <ion-content class="addCandidateProfilePage">
-  <ion-list>
+  <ion-list inset>
     <form [ngFormModel]="form">
 
       <ion-input>
@@ -20,18 +20,22 @@
       </ion-input>
 
 
-        <ion-input>
-          <ion-label>Experience</ion-label>
-          <div>
-            <input type="text" required maxlength="5" ngControl="experience">
-            <div *ngIf="experience.dirty && !experience.valid">
-              <p *ngIf="experience.errors.required" class="error-text">Required</p>
-              <p *ngIf="experience.errors.numeric" class="error-text">Invalid Input</p>
-            </div>
+      <ion-input>
+        <ion-label>Experience</ion-label>
+        <div>
+          <input type="text" required ngControl="experience">
+          <div *ngIf="experience.dirty && !experience.valid">
+            <p *ngIf="experience.errors.required" class="error-text">Required</p>
+            <p *ngIf="experience.errors.numeric" class="error-text">Invalid Input</p>
           </div>
+        </div>
       </ion-input>
-
-      <button (click)="submitData()" [disabled]="!form.valid" class="btn btn-primary">Sumbit data</button>
+      <ion-input>
+        <ion-label>Skills</ion-label>
+      </ion-input>
+      <ion-checkbox *ngFor="#skill of skills" [value]="skill">{{skill}}</ion-checkbox>
+      <button (click)="submitData()" [disabled]="!form.valid" class="button button-full" full>Sumbit data</button>
     </form>
   </ion-list>
+
 </ion-content>
